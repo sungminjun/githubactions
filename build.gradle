@@ -30,5 +30,11 @@ test {
 }
 
 task helloActions() {
-	commandLine 'sh', './bin/helloactions.sh'
+	// commandLine 'sh', './bin/helloactions.sh'
+  doLast {
+    println "hello actions"
+    exec {
+      executable "./bin/helloactions.sh"
+    }
+  }
 }
