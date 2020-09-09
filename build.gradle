@@ -29,10 +29,21 @@ test {
 	useJUnitPlatform()
 }
 
+/**
+task myPrebuildTask(type: Exec) {
+    workingDir "$projectDir/bin"
+    if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+        commandLine 'cmd', '/c', 'helloactions.sh'
+    } else {
+        commandLine 'sh', '-c', 'helloactions.sh'
+    }
+}
+*/
+
 task helloActions {
   doLast {
     println 'hello actions @ gradle-println'
-	commandLine 'sh', './bin/helloactions.sh'
+//	commandLine 'sh', './bin/helloactions.sh'
     exec {
       executable './bin/helloactions.sh'
     }
