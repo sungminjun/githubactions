@@ -29,12 +29,19 @@ test {
 	useJUnitPlatform()
 }
 
-task helloActions() {
-	// commandLine 'sh', './bin/helloactions.sh'
+task helloActions {
   doLast {
-    println "hello actions"
+    println 'hello actions @ gradle-println'
+	commandLine 'sh', './bin/helloactions.sh'
     exec {
-      executable "./bin/helloactions.sh"
+      executable './bin/helloactions.sh'
     }
   }
+}
+
+task helloGradle {
+    dependsOn helloActions
+    doLast {
+        println "I'm Gradle"
+    }
 }
