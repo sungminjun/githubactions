@@ -28,3 +28,7 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+task helloActions() {
+	commandLine 'sh', './bin/helloactions.sh'
+}
