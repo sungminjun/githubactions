@@ -23,7 +23,7 @@ jobs:
     - name: Print hello world
       run: echo Hello, github actions
     - name: run helloworld script
-      run: ./helloactions.sh
+      run: ./bin/helloactions.sh
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 #    - name: print helloGradle
